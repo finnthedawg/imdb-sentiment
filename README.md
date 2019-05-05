@@ -5,21 +5,21 @@ This project conducts sentiment analysis on the `Large Movie Review Dataset v1.0
 
 ### The dataset:
 
-The core dataset contains 50,000 reviews split evenly into 25k train
-and 25k test sets. The overall distribution of labels is balanced (25k
-pos and 25k neg). There is an additional 50,000 unlabeled
+The core dataset contains `50,000` reviews split evenly into `25,000` train
+and `25,000` test sets. The overall distribution of labels is balanced (25k
+pos and 25k neg). There is an additional `50,000` unlabeled
 documents for unsupervised learning.
 
-In the entire collection, no more than 30 reviews are allowed for any
+In the entire collection, no more than `30` reviews are allowed for any
 given movie because reviews for the same movie tend to have correlated
 ratings. Further, the train and test sets contain a disjoint set of
 movies, so no significant performance is obtained by memorizing
 movie-unique terms and their associated with observed labels.  In the
-labeled train/test sets, a negative review has a score <= 4 out of 10,
-and a positive review has a score >= 7 out of 10. Thus reviews with
+labeled train/test sets, a negative review has a score `<= 4` out of `10`,
+and a positive review has a score `>= 7` out of `10`. Thus reviews with
 more neutral ratings are not included in the train/test sets. In the
 unsupervised set, reviews of any rating are included and there are an
-even number of reviews > 5 and <= 5.
+even number of reviews `>5` and `<=5`.
 
 ## Run instructions
 Install the required packages
@@ -35,7 +35,13 @@ jupyter notebook analysis.ipynb
 
 #### Vectorization of words and learning classification using regression models
 
-#### Building a Word2Vec model for sentiment analysis
+#### Building a Word2Vec[2] model for sentiment analysis
+
+Word2Vec is a tool that inputs a text corpora and produces word vectors as outputs. It builds a vocabulary from training text and learns optimal vector representations of words. The cosine of the word vectors can give us the relationship and distances between words. The resulting vector representations can also be used as input features in other NLP and ML applications. Interestingly, the word vectors can capture many latent linguistic information for example. `king - man + woman` is most likely queen
+
+More information on the model can be found here https://arxiv.org/pdf/1301.3781.pdf
+
+We build a Word2Vec sentiment analysis model on our IMDB dataset.
 
 #### Building a Doc2Vec model
 
