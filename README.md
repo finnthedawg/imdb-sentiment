@@ -31,7 +31,16 @@ Run the notebook and execute the cells in question
 jupyter notebook analysis.ipynb
 ```
 
+## Analysis performed:
+
+#### Vectorization of words and learning classification using regression models
+
+#### Building a Word2Vec model for sentiment analysis
+
+#### Building a Doc2Vec model
+
 ## References
 
 ---
-A.  L.  Maas,  R.  E.  Daly,  P.  T.  Pham,  D.  Huang,  A.  Y.  Ng,  and  C.  Potts,  “Learningword  vectors  for  sentiment  analysis,”  inProceedings of the 49th Annual Meeting of theAssociation for Computational Linguistics: Human Language Technologies.   Portland, Oregon,
+1. [IMDB] A.L.Maas,  R.E.Daly,  P.T.Pham,  D.Huang, A.Y.Ng,  and C.Potts,  “Learning word  vectors  for  sentiment  analysis,”  in Proceedings of the 49th Annual Meeting of the Association for Computational Linguistics: Human Language Technologies. Portland, Oregon,
+2. [Word2Vec] Mikolov, T., Chen, K., Corrado, G.S., & Dean, J. (2013). Efficient Estimation of Word Representations in Vector Space. CoRR, abs/1301.3781.
