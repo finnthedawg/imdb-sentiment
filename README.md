@@ -24,7 +24,9 @@ even number of reviews `>5` and `<=5`.
 ## Run instructions
 Install the required packages
 ```
-pip install -U scikit-learn
+pip3 install -U scikit-learn
+pip3 install paramiko
+pip3 install gensim
 ```
 Run the notebook and execute the cells in question
 ```
