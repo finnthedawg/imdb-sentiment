@@ -21,6 +21,9 @@ more neutral ratings are not included in the train/test sets. In the
 unsupervised set, reviews of any rating are included and there are an
 even number of reviews `>5` and `<=5`.
 
+After analyzing multiple models and multiple parameters, the best model used a support vector machine, the porter stemmer, Doc2Vec tokenization and bi-gram modelling. Resulting in the performance over the test set of:
+**90.47%**
+
 ## Run instructions
 Install the required packages
 ```
@@ -124,7 +127,15 @@ Vectorizer size = 150, iter = 20
 LinearSVM max_iter = 2000, regularizer = l2, penalty=1.0
 ```
 
-We achieved a performance of **90.47%**
+We achieved a performance of **90.47%** which was the highest performance out of the models.
+
+#### Ensemble learning
+
+The final attempt was to use ensemble learning with the three language models that were developed in sections 8, 9 and 10. Each model predicts the sentiment of the text independently and the most populate vote is chosen as the representation of the full model.
+
+With the three models, our performance was `85.24%`
+
+Unfortunately, the score is even lower than using the best model (Stemmed SVM with Doc2Vec). It appears that the other two models (Linear Doc2Vec) and (Linear Word2Vec) are quite correlated, and when added together, overpowered the best classifier in the group (Stemmed SVM with Doc2Vec). A possible future extension to this research is to weigh the predictions of each model depending on how accurate they are and to incorporate more learners.
 
 ## References
 
