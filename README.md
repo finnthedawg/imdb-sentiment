@@ -105,7 +105,26 @@ iter={1,5, 20}
 training data size={1000, 5000, 25,000}
 For a total of 3x3x3=27 settings
 ```
+#### Stemming, N-grams, Doc2Vec, and building a support vector machine.
 
+The last model used was a linear support vector machine with a number of pre-processing strategies.
+
+1. First, the porter stemmer was applied to stem the movie review text at a sentence level. This was done in order to reduce the space of unnecessary inflections at the word level that don't contribute much to the semantic understanding of the review.
+
+2. Second, the sentences were tokenized at both a unigram and bi-gram level. The idea behind this step is to move away from a bag-of-words level and into a phrase level understanding of the reviews. This should help classify cases where the words used in the review may be positive, but negated at a bi-gram level. For instance, `Awfully good`
+
+3. Second, the words were vectorized before fed into the Doc2Vec model. This was done because we want to capture the relationships between phrases at a higher level than a simple bag-of-words of bag-of-phrases model.
+
+4. All of this was fed into a linear SVM in order to give us our classifications.
+
+Using the following parameters:
+```
+NgramTokenizer = unigram, bigram
+Vectorizer size = 150, iter = 20
+LinearSVM max_iter = 2000, regularizer = l2, penalty=1.0
+```
+
+We achieved a performance of **90.47%**
 
 ## References
 
