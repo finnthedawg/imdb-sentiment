@@ -35,7 +35,18 @@ jupyter notebook analysis.ipynb
 
 ## Analysis performed:
 
-#### Vectorization of words and learning classification using regression models
+#### WordCounds (BagOfWords) and logistic regression
+
+This can be found in §4 of the analysis notebook. The vectorization algorithm (CountVectorizer) was trained on the full dataset and 1000 most common words were extracted. Below is a plot of the learning curve against the training size.
+
+<p align="center">
+  <img width="350"  src="./learningcurve.png">
+</p>
+
+Suprisingly, with only `1000` training samples the model achieved a F1-score of `77.6%` while with `5,000` training samples the model achieved an accuracy of `81.8%`. Nevertheless, this is to be expected because the more training examples we have, the better the generalization to the unseen test.
+
+#### Interactions between training size and feature size
+
 
 #### Building a Word2Vec model for sentiment analysis
 
