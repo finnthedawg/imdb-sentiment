@@ -50,10 +50,17 @@ Suprisingly, with only `1000` training samples the model achieved a F1-score of 
 I hypothesized that the size of the training only improves the learning model if the size of the feature space is large enough (vocabulary). I tested this by running the logistic model over different feature sizes `[100, 1000,10000]` and investigated the performance profile over the training set with varying lengths. Below are the results.
 
 <p align="center">
-  <img width="150"  src="./profile1.png">
-  <img width="150"  src="./profile2.png">
-  <img width="150"  src="./profile3.png">
+  <img width="350"  src="./profile1.png">
+  <img width="350"  src="./profile2.png">
 </p>
+
+(Left) 100 features, (Right) 1000 features
+
+With `100` features, the model quickly learned the most optimal parameters. After `5000`-`10000` training examples, the model did not improve the score. Furthurmore, this score actually dropped after `20,000+` instances suggesting either overfitting or lack of features to search over since the feature space is so constrained. With `1000` features the model continually improved even after `25000` examples.
+
+#### Vectorization with CV/TF-ID and training with MultinomialNaiveBayes/LogisticRegression
+
+
 
 
 #### Building a Word2Vec model for sentiment analysis
