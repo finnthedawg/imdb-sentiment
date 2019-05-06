@@ -47,6 +47,14 @@ Suprisingly, with only `1000` training samples the model achieved a F1-score of 
 
 #### Interactions between training size and feature size
 
+I hypothesized that the size of the training only improves the learning model if the size of the feature space is large enough (vocabulary). I tested this by running the logistic model over different feature sizes `[100, 1000,10000]` and investigated the performance profile over the training set with varying lengths. Below are the results.
+
+<p align="center">
+  <img width="150"  src="./profile1.png">
+  <img width="150"  src="./profile2.png">
+  <img width="150"  src="./profile3.png">
+</p>
+
 
 #### Building a Word2Vec model for sentiment analysis
 
