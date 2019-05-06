@@ -97,7 +97,14 @@ Doc2Vec [3] is tool for representing documents as vectors. It builds upon the Wo
 
 Furthur details can be found here: https://cs.stanford.edu/~quocle/paragraph_vector.pdf
 
-This project uses the [Gensim package implementation of Doc2Vec](https://radimrehurek.com/gensim/models/doc2vec.html), specifically, [Scikit-learn wrapper for it in Gensim](https://radimrehurek.com/gensim/sklearn_api/d2vmodel.html). We start we an example of how to train a Doc2Vec model and use it in a sentiment analyzer. Then we studying Doc2Vec's behavior under different settings.
+This project uses the [Gensim package implementation of Doc2Vec](https://radimrehurek.com/gensim/models/doc2vec.html), specifically, [Scikit-learn wrapper for it in Gensim](https://radimrehurek.com/gensim/sklearn_api/d2vmodel.html). We start we an example of how to train a Doc2Vec model and use it in a sentiment analyzer. Then we studying Doc2Vec's behavior under different settings. Similar to the Word2Vec, we searched over the parameter space:
+
+```
+size={50, 100, 200}
+iter={1,5, 20}
+training data size={1000, 5000, 25,000}
+For a total of 3x3x3=27 settings
+```
 
 
 ## References
