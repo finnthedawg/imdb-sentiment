@@ -58,18 +58,38 @@ I hypothesized that the size of the training only improves the learning model if
 
 With `100` features, the model quickly learned the most optimal parameters. After `5000`-`10000` training examples, the model did not improve the score. Furthurmore, this score actually dropped after `20,000+` instances suggesting either overfitting or lack of features to search over since the feature space is so constrained. With `1000` features the model continually improved even after `25000` examples.
 
-#### Vectorization with CV/TF-ID and training with MultinomialNaiveBayes/LogisticRegression
-
-
-
-
 #### Building a Word2Vec model for sentiment analysis
 
 Word2Vec [2] is a tool that inputs a text corpora and produces word vectors as outputs. It builds a vocabulary from training text and learns optimal vector representations of words. The cosine of the word vectors can give us the relationship and distances between words. The resulting vector representations can also be used as input features in other NLP and ML applications. Interestingly, the word vectors can capture many latent linguistic information for example. `king - man + woman` is most likely queen
 
+```
+Sentences: the young king told us he was angry | the prince said he was mad
+Sentence Similarity 75.422
+Sentences: twinkle twinkle little star | what is the meaning of life
+Sentence Similarity 1.352
+```
+
 More information on the model can be found here https://arxiv.org/pdf/1301.3781.pdf
 
-We build a Word2Vec sentiment analysis model on our IMDB dataset.
+We build a Word2Vec sentiment analysis model on our IMDB dataset. With the base settings we achieved the following statistics
+```
+Accuracy  = 86.99%
+Average Precision = 86.99%
+Average Recall    = 86.99%
+Average F1-score  = 86.99%
+```
+
+We then searched over the parameter space of
+```
+size={75, 150, 300}
+window={5,10, 20}
+training data size={1000, 5000, 25,000}
+```
+And created the best model with an F-score of 88.32
+```
+size: 300 | window 20 | trainSize 25000
+Average F1-score  = 88.32%
+```
 
 #### Building a Doc2Vec model
 
