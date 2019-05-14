@@ -131,11 +131,11 @@ We achieved a performance of **90.47%** which was the highest performance out of
 
 #### Ensemble learning
 
-The final attempt was to use ensemble learning with the three language models that were developed in sections 8, 9 and 10. Each model predicts the sentiment of the text independently and the most populate vote is chosen as the representation of the full model.
+The final attempt was to use ensemble learning with the three language models that were developed in sections 8, 9 and 10. Each model predicts the sentiment of the text independently and the most populate vote is chosen as the representation of the full model. The idea is that multiple weak models will exceed the strength of a single strong model.
 
 With the three models, our performance was `85.24%`
 
-Unfortunately, the score is even lower than using the best model (Stemmed SVM with Doc2Vec). It appears that the other two models (Linear Doc2Vec) and (Linear Word2Vec) are quite correlated, and when added together, overpowered the best classifier in the group (Stemmed SVM with Doc2Vec). A possible future extension to this research is to weigh the predictions of each model depending on how accurate they are and to incorporate more learners.
+Unfortunately, the score is even lower than using the best model (Stemmed SVM with Doc2Vec). It appears that the other two models (Linear Doc2Vec) and (Linear Word2Vec) are quite correlated, and when added together, overpowered the best classifier in the group (Stemmed SVM with Doc2Vec). A possible future extension to this research is to weigh the predictions of each model depending on how accurate they are. This should balance out learners with a weaker prediction. In addition, I only had 3 learners. Increasing the number of  learners should improve our result statistics
 
 ## References
 
