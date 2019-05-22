@@ -21,7 +21,14 @@ more neutral ratings are not included in the train/test sets. In the
 unsupervised set, reviews of any rating are included and there are an
 even number of reviews `>5` and `<=5`.
 
-After analyzing multiple models and multiple parameters, the best model used a support vector machine, the porter stemmer, Doc2Vec tokenization and bi-gram modelling. Resulting in the performance over the test set of:
+After analyzing multiple models and multiple parameters, the best model used the following pipeline:
+```
+1. Stemming with porter stemmer
+2. Vectorization based on a Bi-gram level.
+3. Doc2Vec representation of the vectorized documents.
+4. Support vector machine model.
+```
+The above pipeline resulted in the performance over the test set of:
 **90.47%**
 
 ## Run instructions
